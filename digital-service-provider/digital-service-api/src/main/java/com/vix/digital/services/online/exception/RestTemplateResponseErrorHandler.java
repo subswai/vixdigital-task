@@ -43,6 +43,7 @@ public class RestTemplateResponseErrorHandler implements ResponseErrorHandler {
             log.error("CLIENT ERROR ...........");
             if (httpResponse.getStatusCode() == HttpStatus.NOT_FOUND) {
                 log.error("Service Not Available ");
+                throw new ServiceNotFoundException();
             }
         }
     }
