@@ -1,0 +1,47 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div style="text-align:center;" >
+<h1>VIX DIGITAL - Manage Services </h1>
+</div>
+<nav style="text-align:center" >
+    <a routerLink="/add" routerLinkActive="active" class="btn btn-primary">Go to Add Service</a>
+</nav>
+<router-outlet></router-outlet>
+
+
+<div class="container" style="text-align:center ">
+<div class="container" style="text-align:center">
+    
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Service Endpoint</th>
+            <th>Status</th>
+            <th>Method</th>
+            <th>Created On</th>
+            <th>Last Updated On</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let service of services">
+            <td>{{service.id}}</td>
+            <td>{{service.name}}</td>
+            <td>{{service.url}}</td>
+            <td>{{service.serviceState}}</td>
+            <td>{{service.methodType}}</td>
+            <td>{{service.createdTime}}</td>
+            <td>{{service.lastUpdatedTime}}</td>
+            <td class="text-center"><button class="btn btn-danger btn-sm" (click)="deleteService(service.id)"><span class="glyphicon glyphicon-remove"></span> Delete </button></td>
+          </tr>
+    </tbody>
+    </table>
+
+</div>
+
+
+

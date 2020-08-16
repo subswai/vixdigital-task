@@ -1,0 +1,62 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div style="text-align:center">
+    <h1>VIX DIGITAL - Add Service </h1>
+    </div>
+    <nav style="text-align:center">
+        <a routerLink="/manage" routerLinkActive="active" class="btn btn-primary">Go to Manage Services</a>
+    </nav>
+    <router-outlet></router-outlet>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <fieldset>
+                    <div class="form-group" [class.has-error]="name.invalid" >
+                        <label for="Name" class="control-label"><span class="req">* </span> Name: </label>
+                        <input required type="text" [(ngModel)]="service.name" name="name" id="name"
+                            class="form-control phone" maxlength="28" placeholder="Add Service Name" #name="ngModel"/>
+                            <span class="help-block" *ngif="name.invalid"></span>
+                    </div>
+
+                    <div class="form-group" [class.has-error]="url.invalid" >
+                        <label for="url" class="control-label"><span class="req">* </span> Service Endpoint: </label>
+                        <input required type="text" [(ngModel)]="service.url" name="url" id="url"
+                            class="form-control phone" maxlength="28" placeholder="Enter Service Endpoint" #url="ngModel"/>
+                            <span class="help-block" *ngif="url.invalid"></span>
+                    </div>
+
+                    <div class="form-group" [class.has-error]="serviceState.invalid" >
+                        <label for="serviceState" class="control-label"><span class="req">* </span> Service status: </label>
+                        <input required type="text" [(ngModel)]="service.serviceState" name="serviceState " id="serviceState"
+                            class="form-control phone" maxlength="28" placeholder="Enter Service Status" #serviceState="ngModel"/>
+                            <span class="help-block" *ngif="serviceState.invalid"></span>
+                            <h6><small>Only accepts RUNNING/STARTING/STOPPING/UNKNOWN as Service Status</small></h6>
+                    </div>
+					
+					<div class="form-group" [class.has-error]="methodType.invalid" >
+                        <label for="methodType" class="control-label"><span class="req">* </span>  HTTP Method: </label>
+                        <input required type="text" [(ngModel)]="service.methodType" name="methodType" id="methodType"
+                            class="form-control phone" maxlength="28" placeholder="Enter HTTP Method" #methodType="ngModel"/>
+                            <span class="help-block" *ngif="methodType.invalid"></span>
+                            <h6><small>Only accepts POST/GET/PUT/DELETE as HTTP Method</small></h6>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Add" (click)="registerNow()">
+                    </div>
+                </fieldset>
+            </form>
+            <div style="text-align: center; color: green;">
+                <h4>{{message}}</h4>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+
+
