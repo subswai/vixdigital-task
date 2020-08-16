@@ -112,7 +112,7 @@ If you do not have maven installed, please run the following command in a termin
         
 ## Advance stage of Development
 Due to time constraint, only MVP items are scoped as part of this development. There are few additional tasks which can 
-be considered for advance development.
+should be considered for advance development.
 1. Secure Rest APIs
 2. Additional validation for ENUM Fields
 3. Additional custom exception handling
@@ -120,6 +120,7 @@ be considered for advance development.
 4. Error messages in UI Frontend
 5. Add Dropdown elements in stead of input text for ENUM fields in frontend
 6. Add Sorting functionality in Manage screen in frontend
-7. Add Unit testing for Frontend
-8. Add BDD for Frontend
-9. Create docker image to deploy on a docker container
+7. Externalize service endpoint in frontend
+8. Add Unit testing for Frontend
+9. Add BDD for Frontend
+10. Create docker image to deploy on a docker container
